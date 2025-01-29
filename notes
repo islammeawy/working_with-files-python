@@ -1,0 +1,73 @@
+Path(path of the file).exist check if this path is real in the machine
+p1 = Path(file path)
+p1.name = the name of the file
+p1.suffix = the .txt
+p1.stem = just the name without suffix
+
+
+p2 = Path(dir. path)
+p2.iterdir = iterate over files in that directory
+
+#renaming all files in the dir.
+
+for file in itrdir(files) :
+
+    new file name = 'newname' + path.stem = path.suffix
+    new file path = Path.with_name(new file name)
+    file.rename(new_file_path)
+
+
+# renaming files inside another file
+#firstlooping in all files in the root dir
+    root_dir = Path('the main file')
+    files = root_dir.itrdir()   #the main files inside the root dir.
+    for file in files :
+
+
+ #to get accsess of the files iniside the rootdir :
+  root_dir = Path('the main file')
+    files = root_dir.itrdir()   #the main files inside the root dir.
+    for file in files :
+        for subfiles in file.itrdir() :
+            print(subfiles)
+
+
+
+#another way :
+  root_dir = Path('the main file')
+    files = root_dir.glop("**/*")
+    for file in files :
+        print(files)
+
+
+#only print te files in the root dir.
+for files in file :
+    if files.is_file :
+        parent_file= files.part   #print a tuble with the fodlers
+        certain folder = parent_folder[n]
+
+
+#getting the date when the file was created :
+
+from pathlib import Path
+from datetime import datetime
+
+path = Path(r'C:\Users\SMSMAAA\working_with_files\files\november\a.txt')
+stats = path.stat()
+second_created = stats.st_ctime
+date_created = datetime.fromtimestamp(second_created)
+created_date_str = created_date.strftime("%Y-%m-%d_%H:%M:%S")
+
+print(date_created)
+
+# changing extension of the files :
+    from pathlib import Path
+root_dir = Path('files')
+for file in root_dir.glob('*.txt'):
+    if file.is_file():
+        new_file = file.with_suffix('.csv')
+        file.rename(new_file)
+
+
+# creat archive from files :
+    
